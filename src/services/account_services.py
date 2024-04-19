@@ -9,6 +9,9 @@ class AccountOperations:
         self.operations = operations
 
     def update_balance(self, amount: float):
+        if self.person.account is None:
+            raise AccountErrors.NO_OWNER.value
+
         client_balance = self.person.account.get_balance()
         special_balance = self.person.account.get_special_credit()
         
@@ -16,6 +19,7 @@ class AccountOperations:
             self.operations.credit(amount)
             return AccountInfo.SUCCESS_CREDIT
         
+        #uses *-1 to convert to a positive number to simplify operations
         if client_balance < 0: #special credit
             if (amount * -1) > ((client_balance*-1) + (special_balance)):
                 raise AccountErrors.NO_ENOUGH_LIMIT.value
@@ -25,9 +29,10 @@ class AccountOperations:
 
             self.operations.debit(amount)
             return AccountInfo.SUCCESS_DEBIT
-        
-        if (client_balance - (amount*-1)) < 0:
-            raise AccountErrors.NO_ENOUGH_MONEY.value        
+
+        if ( (client_balance + special_balance) - (amount*-1)) < 0:
+            raise AccountErrors.NO_ENOUGH_LIMIT.value        
+    
             
         else:
             self.operations.debit(amount)

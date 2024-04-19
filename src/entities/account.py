@@ -12,6 +12,9 @@ class Account:
     def get_special_credit(self):
         return self.__special_credit
 
+    def set_special_credit(self, limit: float):
+        self.__special_credit += limit
+
     def get_balance(self):
         if self.__have_owner:
             return self.__balance
@@ -29,11 +32,28 @@ class Account:
         self.owner = person_identity
         
     def update_balance(self, amount: float):
-        if self.__balance < 0 and amount < 0:
-            self.__balance += amount
+        if self.__balance < 0:
+            if amount > 0:
+                # -X + X -> OK
+                self.__balance  += amount
+            else:
+                # -X + - X -> OK
+                self.__balance -= amount
+        
+        elif self.__balance == 0:
+            if amount < 0:
+                self.__balance += (amount*-1)        
+            else:
+                self.__balance += amount
+
         else:
-            self.__balance += amount
-    
+            if amount > 0:
+                # +X + X -> OK
+                self.__balance += amount
+            else:
+                # +X + -X -> OK
+                self.__balance += amount
+        
     @property
     def __have_owner(self):
         if self.owner is None:

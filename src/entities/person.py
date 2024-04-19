@@ -55,6 +55,10 @@ class Person:
 
     def add_account(self, account: Account):
         self.account = account
+        
+    def remove_account(self, account: Account):
+        if self.account.get_details().number == account.get_details().number:
+            self.account = None
     
     def details(self) -> PersonModel:
         return PersonModel(

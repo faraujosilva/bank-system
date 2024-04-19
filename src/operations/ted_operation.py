@@ -8,8 +8,6 @@ class TED(IOperationMethod):
         try:
             if self.validate_transaction(sender, recipient, amount):
                 sender.account.update_balance(amount)
-                if amount < 0:
-                    amount = amount * -1
                 recipient.account.update_balance(amount)
             
         except Exception as e:
