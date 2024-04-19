@@ -10,7 +10,7 @@ Projeto para simular um ecossistema bancário com suas extremidades, validando o
 
 # UML
 
-![Logo](docs/imgs/uml.png)
+![Logo](docs/imgs/UML.png)
 
 # RoadMap
 - Implementar gravação e leitura de estados das entidades e informações bancárias em um banco de dados, junto com suas operações(atualizar saldo, etc).
