@@ -3,7 +3,7 @@ from src.utils.general import AccountInfo, AccountErrors
 
 from src.interfaces.iaccountoperation import IAccountOperation
 
-class AccountOperations:
+class AccountServices:
     def __init__(self, person: Person, operations: IAccountOperation):
         self.person = person
         self.operations = operations

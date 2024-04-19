@@ -24,3 +24,6 @@ class AccountInfo(Enum):
 class TEDInfo(Enum):
     START_TED = "Ted transaction started"
 
+class PIXInfo(Enum):
+    START_PIX = "PIX transaction started"
+

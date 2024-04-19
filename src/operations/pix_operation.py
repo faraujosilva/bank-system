@@ -1,10 +1,10 @@
 from src.entities.person import Person
 from src.interfaces.iaccountmethod import IOperationMethod
-from src.utils.general import TEDInfo
+from src.utils.general import PIXInfo
 
-class TED(IOperationMethod):
+class PIX(IOperationMethod):
     def do_transaction(self, sender: Person, recipient: Person, amount: float):
-        print(TEDInfo.START_TED.value)
+        print(PIXInfo.START_PIX.value)
 
         try:
             if self.validate_transaction(sender, recipient, amount):
