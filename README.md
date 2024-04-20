@@ -13,12 +13,6 @@ Desenvolvido em GOLang e Python
 
 ![Logo](docs/imgs/UML.png)
 
-# RoadMap
-- Implementar gravação e leitura de estados das entidades e informações bancárias em um banco de dados, junto com suas operações(atualizar saldo, etc).
-- Implementar inputs externos para simular realmente uma interface de um app de banco.
-- Implementar metodos de pagamento via PIX, Cartões e Maquininhas.
-- Criar factories ou strategies para implementar o metodo de pagamento
-
 # Use Cases
 - Criar duas instancias de pessoas(origem e destinatário)
 - Criar as contas e associamos a cada pessoa
@@ -48,3 +42,12 @@ Desenvolvido em GOLang e Python
 
 - Testes em GO menos extensivos por sua natureza de maior tipagem
     ![Logo1](docs/imgs/ddt2.png)
+
+
+# RoadMap
+- Implementar gravação e leitura de estados das entidades e informações bancárias em um banco de dados, junto com suas operações(atualizar saldo, etc).
+- Implementar inputs externos para simular realmente uma interface de um app de banco.
+- Implementar metodos de pagamento via PIX, Cartões e Maquininhas.
+- Criar factories ou strategies para implementar o metodo de pagamento
+- Melhorar IF/ELSE no seviço de Account para melhor modularizar
+- Melhorar lógica de debit/credit e garantir que seja feito apenas pela camada de seviço, e não deixar os metodos TED/PIX fazerem esse papel direto na entidade Account
