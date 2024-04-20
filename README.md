@@ -2,6 +2,7 @@
 # Sistema bancário
 
 Projeto para simular um ecossistema bancário com suas extremidades, validando o fim a fim da transação por inúmeros metodos diferentes (TED, PIX) com validação de cheque especial.
+Desenvolvido em GOLang e Python
 
 # Design
 - Abstrai as funcionalidades especificas e regras de cada meio de pagamento(TED, PIX, Cartão, maquininha)
@@ -32,7 +33,7 @@ Projeto para simular um ecossistema bancário com suas extremidades, validando o
 - A implementação facilita, abstrai e modulariza a implementação e modificação facilmente das implementas, pois não dependemos de fato delas, e sim de interfaces e abstrações, vide exemplo abaixo. Claro que não implementamos as checagens especificas do PIX ou TED, mas isso ilustra a capacidade do sistema.
 - Consulte o exemplo: [Exemplo](docs/examples/modularity.md)
 
-- Para utilizar o DDT, entenda os parametros na respectiva ordem:
+- Para utilizar o DDT em Python, entenda os parametros na respectiva ordem:
     - Nome do cliente 1
     - Idade do cliente 1
     - Pais de origem do cliente 1
@@ -43,5 +44,7 @@ Projeto para simular um ecossistema bancário com suas extremidades, validando o
     - Saldo final esperado na conta do cliente 1
     - Assim segue a logica para o cliente 2....
     - Nos dois ultimos campos, temos se algm erro é esperado como por exemplo NO_ENOUGH_LIMIT -> [Codigo](src/utils/general.py) ou None e o metodo de pagamento TED ou PIX
-
     ![Logo1](docs/imgs/ddt.png)
+
+- Testes em GO menos extensivos por sua natureza de maior tipagem
+    ![Logo1](docs/imgs/ddt2.png)
